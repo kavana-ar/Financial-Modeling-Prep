@@ -36,17 +36,14 @@ The main focus of this project is to understand how Apple's stock price reacts a
 # Dataset Used
 
 This project uses historical stock market and earnings data for Apple (`AAPL`) obtained from the Financial Modeling Prep API.
+
 **Data Source:** [Free Stock Market API and Financial Statements API | FMP](https://site.financialmodelingprep.com/developer/docs)
 
 The project contains two datasets:
 
-### 1. Apple Stock Data
+### 1. [Apple Stock Data](Apple Stock Data)
 
-**Raw Data:** [apple_stock_data.csv](apple_stock_data.csv)
-
-### 2. Apple Earnings Data
-
-**Raw Data:** [apple_earnings_data.csv](apple_earnings_data.csv)
+### 2. [Apple Earnings Data](Apple Earnings Data)
 
 ---
 
@@ -71,10 +68,10 @@ The project follows the workflow below:
 
 ### Project Stages
 
-* **Step 1: [Data Extraction](Data Extraction)
-* **Step 2: [Data Validation and Preparation](Data Validation and Preparation)
-* **Step 3: [Data Storage](Data Storage) 
-* **Step 4: [SQL Analysis](SQL Analysis)
+* **Step 1: [Data Extraction](Data-Extraction)
+* **Step 2: [Data Validation and Preparation](Data-Validation-and-Preparation)
+* **Step 3: [Data Storage](Data-Storage) 
+* **Step 4: [SQL Analysis](SQL-Analysis)
 * **Step 5: [Dashboard](Dashboard)
 
 ---
