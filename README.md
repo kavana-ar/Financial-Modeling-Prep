@@ -11,8 +11,6 @@ The project follows an end-to-end data analysis workflow consisting of several s
 * Performed data validation and quality checks using Python and Pandas.
 * Loaded the cleaned datasets into a PostgreSQL database.
 * Used SQL to analyze stock prices before, on, and after earnings announcements.
-* Compared actual EPS with estimated EPS to identify earnings beats, misses, and results that met expectations.
-* Calculated the percentage change in stock price around earnings announcements.
 * Developed an interactive Power BI dashboard to visualize the results.
 
 The main focus of this project is to understand how Apple's stock price reacts around earnings announcements and explore the relationship between EPS performance and stock-price movement.
@@ -30,8 +28,6 @@ The main focus of this project is to understand how Apple's stock price reacts a
 - [Step 4: SQL Analysis](#step-4-sql-analysis)
 - [Step 5: Power BI Dashboard](#step-5-power-bi-dashboard)
 - [Project Files](#project-files)
-- [Key Analysis](#key-analysis)
-- [Project Structure](#project-structure)
 - [Skills Demonstrated](#skills-demonstrated)
 - [Project Summary](#project-summary)
 
@@ -39,27 +35,16 @@ The main focus of this project is to understand how Apple's stock price reacts a
 
 # Dataset Used
 
-This project uses historical stock market and earnings data for Apple (`AAPL`) obtained from the [Financial Modeling Prep API](https://site.financialmodelingprep.com/developer/docs).
-
+This project uses historical stock market and earnings data for Apple (`AAPL`) obtained from the Financial Modeling Prep API.
 **Data Source:** [Free Stock Market API and Financial Statements API | FMP](https://site.financialmodelingprep.com/developer/docs)
 
 The project contains two datasets:
 
 ### 1. Apple Stock Data
 
-The stock dataset contains historical stock market information for Apple, including stock prices and trading-related data.
-
 **Raw Data:** [apple_stock_data.csv](apple_stock_data.csv)
 
 ### 2. Apple Earnings Data
-
-The earnings dataset contains information related to Apple's earnings reports, including:
-
-* Earnings date
-* EPS Actual
-* EPS Estimated
-* Revenue Actual
-* Revenue Estimated
 
 **Raw Data:** [apple_earnings_data.csv](apple_earnings_data.csv)
 
@@ -73,9 +58,7 @@ The following technologies were used to build this project:
 * **Data Source:** Financial Modeling Prep API
 * **Data Processing:** Pandas
 * **Development Environment:** Jupyter Notebook
-* **Database:** PostgreSQL
 * **Database Connection:** SQLAlchemy, Psycopg2
-* **Data Analysis:** SQL
 * **Data Visualization:** Power BI
 
 ---
@@ -88,11 +71,11 @@ The project follows the workflow below:
 
 ### Project Stages
 
-* **Step 1: Data Extraction** — Extract Apple stock and earnings data from the Financial Modeling Prep API.
-* **Step 2: Data Validation and Preparation** — Perform data-quality checks using Python and Pandas.
-* **Step 3: Data Storage** — Load the datasets into PostgreSQL.
-* **Step 4: SQL Analysis** — Analyze earnings performance and stock-price movement.
-* **Step 5: Dashboard** — Visualize the analysis using Power BI.
+* **Step 1: [Data Extraction](Data Extraction)
+* **Step 2: [Data Validation and Preparation](Data Validation and Preparation)
+* **Step 3: [Data Storage](Data Storage) 
+* **Step 4: [SQL Analysis](SQL Analysis)
+* **Step 5: [Dashboard](Dashboard)
 
 ---
 
@@ -100,21 +83,12 @@ The project follows the workflow below:
 
 In this step, I used Python to extract data for Apple (`AAPL`) from the Financial Modeling Prep API.
 
-The following datasets were collected:
-
-* Historical stock price data
-* Historical earnings data
-
 The API responses were converted into Pandas DataFrames and saved as CSV files for further analysis.
 
 ### Output Files
 
 * [apple_stock_data.csv](apple_stock_data.csv)
 * [apple_earnings_data.csv](apple_earnings_data.csv)
-
-### Python File
-
-* [FMP_python.ipynb](FMP_python.ipynb)
 
 ---
 
@@ -151,6 +125,10 @@ The following checks were performed on the earnings dataset:
 
 After completing the validation process, the datasets were prepared for storage and analysis.
 
+### Python File
+
+* [FMP_python.ipynb](FMP_python.ipynb)
+  
 ---
 
 # Step 3: Data Storage
@@ -160,12 +138,7 @@ After completing the data validation process, I loaded the datasets into a Postg
 The following tables were used:
 
 ### `stock_data`
-
-This table contains Apple's historical stock market data.
-
 ### `earnings_data`
-
-This table contains Apple's earnings report information.
 
 Python was used to connect to PostgreSQL and load the datasets into the database for SQL analysis.
 
@@ -285,6 +258,10 @@ This helps answer the question:
 
 **Does beating or missing EPS expectations correspond with a positive or negative stock-price reaction?**
 
+### Sql File
+
+* [FMP query.sql](FMP query.sql)
+
 ---
 
 # Step 5: Power BI Dashboard
@@ -321,37 +298,6 @@ The repository contains the following files:
 | [FMP query.sql](FMP query.sql)           | SQL queries for earnings and stock-price analysis                     |
 | [FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)    | Interactive Power BI dashboard                                        |
 | [README.md](README.md)               | Project documentation                                                 |
-
----
-
-# Key Analysis
-
-This project focuses on answering the following questions:
-
-1. What are Apple's latest completed earnings reports?
-2. What was Apple's stock price on each earnings date?
-3. What was Apple's stock price three trading days before earnings?
-4. What was Apple's stock price on the earnings date?
-5. What was Apple's stock price three trading days after earnings?
-6. How much did Apple's stock price change around earnings announcements?
-7. Did Apple beat, miss, or meet EPS expectations?
-8. What was the EPS surprise for each earnings report?
-9. Is there a relationship between EPS surprises and stock-price reactions?
-
----
-
-# Project Structure
-
-```text
-Financial-Modeling-Prep/
-│
-├── [apple_stock_data.csv](apple_stock_data.csv) 
-├── [apple_earnings_data.csv](apple_earnings_data.csv) 
-├── [FMP_python.ipynb](FMP_python.ipynb)
-├── [FMP query.sql](FMP query.sql)
-├── [FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)
-└── [README.md](README.md)
-```
 
 ---
 
