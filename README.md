@@ -41,9 +41,9 @@ This project uses historical stock market and earnings data for Apple (`AAPL`) o
 
 The project contains two datasets:
 
-### 1. [Apple Stock Data](Apple Stock Data)
+### 1. [Apple Stock Data](Apple-Stock-Data)
 
-### 2. [Apple Earnings Data](Apple Earnings Data)
+### 2. [Apple Earnings Data](Apple-Earnings-Data)
 
 ---
 
@@ -257,7 +257,7 @@ This helps answer the question:
 
 ### Sql File
 
-* [FMP query.sql](FMP query.sql)
+* [FMP query.sql](FMP-query.sql)
 
 ---
 
@@ -292,7 +292,7 @@ The repository contains the following files:
 | [apple_stock_data.csv](apple_stock_data.csv) | Raw historical Apple stock data                                       |
 | [apple_earnings_data.csv](apple_earnings_data.csv) | Raw Apple earnings data                                               |
 | [FMP_python.ipynb](FMP_python.ipynb)        | Python notebook for data extraction, validation, and database loading |
-| [FMP query.sql](FMP query.sql)           | SQL queries for earnings and stock-price analysis                     |
+| [FMP query.sql](FMP-query.sql)           | SQL queries for earnings and stock-price analysis                     |
 | [FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)    | Interactive Power BI dashboard                                        |
 | [README.md](README.md)               | Project documentation                                                 |
 
