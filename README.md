@@ -1,4 +1,4 @@
-# 📈 Apple Earnings & Stock Analysis Using Financial Modeling Prep
+# 📊 Apple Earnings & Stock Analysis Using Financial Modeling Prep
 
 ## Objective
 
@@ -21,22 +21,27 @@ The main focus of this project is to understand how Apple's stock price reacts a
 
 ## Table of Contents
 
-* Dataset Used
-* Technologies Used
-* Project Workflow
-* Step 1: Data Extraction
-* Step 2: Data Validation and Preparation
-* Step 3: Data Storage
-* Step 4: SQL Analysis
-* Step 5: Power BI Dashboard
-* Project Files
-* Key Analysis
+- [Dataset Used](#dataset-used)
+- [Technologies Used](#technologies-used)
+- [Project Workflow](#project-workflow)
+- [Step 1: Data Extraction](#step-1-data-extraction)
+- [Step 2: Data Validation and Preparation](#step-2-data-validation-and-preparation)
+- [Step 3: Data Storage](#step-3-data-storage)
+- [Step 4: SQL Analysis](#step-4-sql-analysis)
+- [Step 5: Power BI Dashboard](#step-5-power-bi-dashboard)
+- [Project Files](#project-files)
+- [Key Analysis](#key-analysis)
+- [Project Structure](#project-structure)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Project Summary](#project-summary)
 
 ---
 
 # Dataset Used
 
-This project uses Apple (`AAPL`) stock market and earnings data extracted using the Financial Modeling Prep API.
+This project uses historical stock market and earnings data for Apple (`AAPL`) obtained from the [Financial Modeling Prep API](https://site.financialmodelingprep.com/developer/docs).
+
+**Data Source:** [Free Stock Market API and Financial Statements API | FMP](https://site.financialmodelingprep.com/developer/docs)
 
 The project contains two datasets:
 
@@ -44,7 +49,7 @@ The project contains two datasets:
 
 The stock dataset contains historical stock market information for Apple, including stock prices and trading-related data.
 
-**Raw Data:** `apple_stock_data.csv`
+**Raw Data:** [apple_stock_data.csv](apple_stock_data.csv)
 
 ### 2. Apple Earnings Data
 
@@ -56,7 +61,7 @@ The earnings dataset contains information related to Apple's earnings reports, i
 * Revenue Actual
 * Revenue Estimated
 
-**Raw Data:** `apple_earnings_data.csv`
+**Raw Data:** [apple_earnings_data.csv](apple_earnings_data.csv)
 
 ---
 
@@ -104,12 +109,12 @@ The API responses were converted into Pandas DataFrames and saved as CSV files f
 
 ### Output Files
 
-* `apple_stock_data.csv`
-* `apple_earnings_data.csv`
+* [apple_stock_data.csv](apple_stock_data.csv)
+* [apple_earnings_data.csv](apple_earnings_data.csv)
 
 ### Python File
 
-* `FMP_python.ipynb`
+* [FMP_python.ipynb](FMP_python.ipynb)
 
 ---
 
@@ -198,7 +203,7 @@ The analysis filters completed earnings dates and orders them from the most rece
 
 ## 3. Stock Price on Each Earnings Date
 
-Joined the `earnings_data` and `stock_data` tables using the earnings date to identify Apple's closing stock price on each earnings date.
+Joined the [apple_stock_data.csv](apple_stock_data.csv) and [apple_earnings_data.csv](apple_earnings_data.csv) tables using the earnings date to identify Apple's closing stock price on each earnings date.
 
 The analysis compares:
 
@@ -300,7 +305,7 @@ The dashboard is designed to help visualize:
 
 ### Power BI File
 
-* `FMP_dashboard_1.pbix`
+* [FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)
 
 ---
 
@@ -310,12 +315,12 @@ The repository contains the following files:
 
 | File                      | Description                                                           |
 | ------------------------- | --------------------------------------------------------------------- |
-| `apple_stock_data.csv`    | Raw historical Apple stock data                                       |
-| `apple_earnings_data.csv` | Raw Apple earnings data                                               |
-| `FMP_python.ipynb`        | Python notebook for data extraction, validation, and database loading |
-| `FMP query.sql`           | SQL queries for earnings and stock-price analysis                     |
-| `FMP_dashboard_1.pbix`    | Interactive Power BI dashboard                                        |
-| `README.md`               | Project documentation                                                 |
+| [apple_stock_data.csv](apple_stock_data.csv) | Raw historical Apple stock data                                       |
+| [apple_earnings_data.csv](apple_earnings_data.csv) | Raw Apple earnings data                                               |
+| [FMP_python.ipynb](FMP_python.ipynb)        | Python notebook for data extraction, validation, and database loading |
+| [FMP query.sql](FMP query.sql)           | SQL queries for earnings and stock-price analysis                     |
+| [FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)    | Interactive Power BI dashboard                                        |
+| [README.md](README.md)               | Project documentation                                                 |
 
 ---
 
@@ -340,12 +345,12 @@ This project focuses on answering the following questions:
 ```text
 Financial-Modeling-Prep/
 │
-├── apple_stock_data.csv
-├── apple_earnings_data.csv
-├── FMP_python.ipynb
-├── FMP query.sql
-├── FMP_dashboard_1.pbix
-└── README.md
+├── [apple_stock_data.csv](apple_stock_data.csv) 
+├── [apple_earnings_data.csv](apple_earnings_data.csv) 
+├── [FMP_python.ipynb](FMP_python.ipynb)
+├── [FMP query.sql](FMP query.sql)
+├── [FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)
+└── [README.md](README.md)
 ```
 
 ---
