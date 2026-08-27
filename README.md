@@ -1,2 +1,381 @@
-# Financial-Modeling-Prep
-Apple earnings and stock analysis using financial data from Financial Modeling Prep, with Python, SQL, PostgreSQL, and Power BI.
+# 📈 Apple Earnings & Stock Analysis Using Financial Modeling Prep
+
+## Objective
+
+In this project, I analyzed the relationship between Apple's earnings performance and its stock-price movement using historical stock market and earnings data.
+
+The project follows an end-to-end data analysis workflow consisting of several stages:
+
+* Extracted Apple's historical stock price and earnings data using the Financial Modeling Prep API.
+* Stored the extracted data in CSV files for further processing.
+* Performed data validation and quality checks using Python and Pandas.
+* Loaded the cleaned datasets into a PostgreSQL database.
+* Used SQL to analyze stock prices before, on, and after earnings announcements.
+* Compared actual EPS with estimated EPS to identify earnings beats, misses, and results that met expectations.
+* Calculated the percentage change in stock price around earnings announcements.
+* Developed an interactive Power BI dashboard to visualize the results.
+
+The main focus of this project is to understand how Apple's stock price reacts around earnings announcements and explore the relationship between EPS performance and stock-price movement.
+
+---
+
+## Table of Contents
+
+* Dataset Used
+* Technologies Used
+* Project Workflow
+* Step 1: Data Extraction
+* Step 2: Data Validation and Preparation
+* Step 3: Data Storage
+* Step 4: SQL Analysis
+* Step 5: Power BI Dashboard
+* Project Files
+* Key Analysis
+
+---
+
+# Dataset Used
+
+This project uses Apple (`AAPL`) stock market and earnings data extracted using the Financial Modeling Prep API.
+
+The project contains two datasets:
+
+### 1. Apple Stock Data
+
+The stock dataset contains historical stock market information for Apple, including stock prices and trading-related data.
+
+**Raw Data:** `apple_stock_data.csv`
+
+### 2. Apple Earnings Data
+
+The earnings dataset contains information related to Apple's earnings reports, including:
+
+* Earnings date
+* EPS Actual
+* EPS Estimated
+* Revenue Actual
+* Revenue Estimated
+
+**Raw Data:** `apple_earnings_data.csv`
+
+---
+
+# Technologies Used
+
+The following technologies were used to build this project:
+
+* **Programming Language:** Python, SQL
+* **Data Source:** Financial Modeling Prep API
+* **Data Processing:** Pandas
+* **Development Environment:** Jupyter Notebook
+* **Database:** PostgreSQL
+* **Database Connection:** SQLAlchemy, Psycopg2
+* **Data Analysis:** SQL
+* **Data Visualization:** Power BI
+
+---
+
+# Project Workflow
+
+The project follows the workflow below:
+
+**Financial Modeling Prep API → CSV Files → Python/Jupyter Notebook → PostgreSQL → SQL Analysis → Power BI Dashboard**
+
+### Project Stages
+
+* **Step 1: Data Extraction** — Extract Apple stock and earnings data from the Financial Modeling Prep API.
+* **Step 2: Data Validation and Preparation** — Perform data-quality checks using Python and Pandas.
+* **Step 3: Data Storage** — Load the datasets into PostgreSQL.
+* **Step 4: SQL Analysis** — Analyze earnings performance and stock-price movement.
+* **Step 5: Dashboard** — Visualize the analysis using Power BI.
+
+---
+
+# Step 1: Data Extraction
+
+In this step, I used Python to extract data for Apple (`AAPL`) from the Financial Modeling Prep API.
+
+The following datasets were collected:
+
+* Historical stock price data
+* Historical earnings data
+
+The API responses were converted into Pandas DataFrames and saved as CSV files for further analysis.
+
+### Output Files
+
+* `apple_stock_data.csv`
+* `apple_earnings_data.csv`
+
+### Python File
+
+* `FMP_python.ipynb`
+
+---
+
+# Step 2: Data Validation and Preparation
+
+After extracting the data, I performed data validation and quality checks using Python and Pandas before loading the data into PostgreSQL.
+
+## Stock Data Validation
+
+The following checks were performed on the stock dataset:
+
+* Checked the dataset structure.
+* Reviewed column names and data types.
+* Checked for missing values.
+* Checked for duplicate records.
+* Generated descriptive statistics.
+* Checked for duplicate dates.
+* Performed consistency checks on stock-price values.
+
+## Earnings Data Validation
+
+The following checks were performed on the earnings dataset:
+
+* Checked the dataset structure.
+* Reviewed column names and data types.
+* Checked for missing values.
+* Checked the availability of EPS Actual values.
+* Checked the availability of EPS Estimated values.
+* Checked the availability of Revenue Actual values.
+* Checked the availability of Revenue Estimated values.
+* Checked for duplicate records.
+* Checked for duplicate earnings dates.
+* Generated descriptive statistics.
+
+After completing the validation process, the datasets were prepared for storage and analysis.
+
+---
+
+# Step 3: Data Storage
+
+After completing the data validation process, I loaded the datasets into a PostgreSQL database.
+
+The following tables were used:
+
+### `stock_data`
+
+This table contains Apple's historical stock market data.
+
+### `earnings_data`
+
+This table contains Apple's earnings report information.
+
+Python was used to connect to PostgreSQL and load the datasets into the database for SQL analysis.
+
+---
+
+# Step 4: SQL Analysis
+
+After loading the stock and earnings data into PostgreSQL, I performed SQL analysis to examine Apple's stock-price behavior around earnings announcements.
+
+The SQL analysis includes the following steps.
+
+## 1. Data Exploration
+
+First, I viewed the available data in both tables:
+
+* `stock_data`
+* `earnings_data`
+
+I also checked the availability of:
+
+* EPS Actual
+* EPS Estimated
+* Revenue Actual
+* Revenue Estimated
+
+---
+
+## 2. Latest Four Completed Earnings Reports
+
+Retrieved the latest four completed earnings reports from the earnings dataset.
+
+The analysis filters completed earnings dates and orders them from the most recent to the oldest.
+
+---
+
+## 3. Stock Price on Each Earnings Date
+
+Joined the `earnings_data` and `stock_data` tables using the earnings date to identify Apple's closing stock price on each earnings date.
+
+The analysis compares:
+
+* Earnings date
+* EPS Actual
+* Closing stock price
+
+---
+
+## 4. Stock Price Three Trading Days Before Earnings
+
+Retrieved Apple's closing stock price three trading days before each of the latest four completed earnings dates.
+
+This helps establish the stock-price position before the earnings announcement.
+
+---
+
+## 5. Earnings-Day Closing Price
+
+Retrieved Apple's closing stock price on the earnings date.
+
+This allows the analysis to compare the stock's performance on the day of the earnings announcement.
+
+---
+
+## 6. Stock Price Three Trading Days After Earnings
+
+Retrieved Apple's closing stock price three trading days after each of the latest four completed earnings dates.
+
+This helps analyze the short-term market reaction following the earnings announcement.
+
+---
+
+## 7. Stock-Price Reaction Analysis
+
+Calculated the percentage change in Apple's stock price between the period before and after earnings.
+
+The analysis compares:
+
+* Price before earnings
+* Price on the earnings date
+* Price after earnings
+* Percentage change in stock price
+
+### Formula Used
+
+```text
+Stock Price Change % =
+((Price After - Price Before) / Price Before) × 100
+```
+
+This analysis helps identify whether Apple's stock price increased or decreased around each earnings announcement.
+
+---
+
+## 8. EPS Surprise vs. Stock-Price Reaction
+
+Compared Apple's actual EPS with estimated EPS and analyzed the corresponding stock-price reaction.
+
+The analysis calculates:
+
+### EPS Surprise
+
+```text
+EPS Surprise = EPS Actual - EPS Estimated
+```
+
+### Earnings Result
+
+The earnings performance was categorized as:
+
+* **Beat** — EPS Actual is greater than EPS Estimated
+* **Miss** — EPS Actual is lower than EPS Estimated
+* **Met** — EPS Actual is equal to EPS Estimated
+
+The analysis then compares the EPS result with the percentage change in Apple's stock price.
+
+This helps answer the question:
+
+**Does beating or missing EPS expectations correspond with a positive or negative stock-price reaction?**
+
+---
+
+# Step 5: Power BI Dashboard
+
+After completing the SQL analysis, I developed an interactive dashboard using Power BI.
+
+The dashboard presents the relationship between Apple's earnings performance and stock-price movement.
+
+The dashboard is designed to help visualize:
+
+* Earnings dates
+* Actual EPS
+* Estimated EPS
+* EPS surprises
+* Earnings results
+* Stock prices around earnings announcements
+* Stock-price changes before and after earnings
+
+### Power BI File
+
+* `FMP_dashboard_1.pbix`
+
+---
+
+# Project Files
+
+The repository contains the following files:
+
+| File                      | Description                                                           |
+| ------------------------- | --------------------------------------------------------------------- |
+| `apple_stock_data.csv`    | Raw historical Apple stock data                                       |
+| `apple_earnings_data.csv` | Raw Apple earnings data                                               |
+| `FMP_python.ipynb`        | Python notebook for data extraction, validation, and database loading |
+| `FMP query.sql`           | SQL queries for earnings and stock-price analysis                     |
+| `FMP_dashboard_1.pbix`    | Interactive Power BI dashboard                                        |
+| `README.md`               | Project documentation                                                 |
+
+---
+
+# Key Analysis
+
+This project focuses on answering the following questions:
+
+1. What are Apple's latest completed earnings reports?
+2. What was Apple's stock price on each earnings date?
+3. What was Apple's stock price three trading days before earnings?
+4. What was Apple's stock price on the earnings date?
+5. What was Apple's stock price three trading days after earnings?
+6. How much did Apple's stock price change around earnings announcements?
+7. Did Apple beat, miss, or meet EPS expectations?
+8. What was the EPS surprise for each earnings report?
+9. Is there a relationship between EPS surprises and stock-price reactions?
+
+---
+
+# Project Structure
+
+```text
+Financial-Modeling-Prep/
+│
+├── apple_stock_data.csv
+├── apple_earnings_data.csv
+├── FMP_python.ipynb
+├── FMP query.sql
+├── FMP_dashboard_1.pbix
+└── README.md
+```
+
+---
+
+# Skills Demonstrated
+
+This project demonstrates the following skills:
+
+* API Data Extraction
+* Data Collection
+* Data Validation
+* Data Cleaning
+* Data Quality Checks
+* Python
+* Pandas
+* Jupyter Notebook
+* PostgreSQL
+* Database Management
+* SQL
+* Data Analysis
+* Power BI
+* Data Visualization
+* Financial Data Analysis
+
+---
+
+## Project Summary
+
+This project demonstrates an end-to-end data analytics workflow, starting with extracting financial data from an API and ending with interactive data visualization.
+
+**Financial Modeling Prep API → Python → Data Validation → CSV → PostgreSQL → SQL Analysis → Power BI**
+
+The project combines Python, SQL, PostgreSQL, and Power BI to analyze how Apple's stock price changes around earnings announcements and explore the relationship between earnings performance and market reaction.
