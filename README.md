@@ -33,9 +33,9 @@ This project uses historical stock market and earnings data for Apple (`AAPL`) o
 
 The project contains two datasets:
 
-### 1. [Apple Stock Data](Apple-Stock-Data)
+### 1. [Apple Stock Data](https://site.financialmodelingprep.com/developer/docs/stable/historical-price-eod-full)
 
-### 2. [Apple Earnings Data](Apple-Earnings-Data)
+### 2. [Apple Earnings Data](https://site.financialmodelingprep.com/developer/docs#earnings-company)
 
 
 ## Technologies
@@ -58,11 +58,11 @@ The project follows the workflow below:
 
 Files in the following stages:
 
-* Step 1: [Data Extraction](Data-Extraction)
-* Step 2: [Data Validation and Preparation](Data-Validation-and-Preparation)
-* Step 3: [Data Storage](Data-Storage) 
-* Step 4: [SQL Analysis](SQL-Analysis)
-* Step 5: [Dashboard](Dashboard)
+* Step 1: [Data Extraction](#step-1-data-extraction)
+* Step 2: [Data Validation and Preparation](#step-2-data-validation-and-preparation)
+* Step 3: [Data Storage](#step-3-data-storage) 
+* Step 4: [SQL Analysis](#step-4-sql-analysis)
+* Step 5: [Dashboard](#step-5-power-bi-dashboard)
 
 
 ## Step 1: Data Extraction
@@ -81,7 +81,7 @@ Link to the script: [apple_stock_data.csv](apple_stock_data.csv) and [apple_earn
 
 After extracting the data, I performed data validation and quality checks using Python and Pandas before loading the data into PostgreSQL.  
 
-Link to the script:[FMP_python-checkpoints.ipynb](FMP_python-checkpoints.ipynb)
+Link to the script: (https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP_python-checkpoint.ipynb)
 
 ## Stock Data Validation
 <img width="1243" height="536" alt="Screenshot 2026-08-30 132818" src="https://github.com/user-attachments/assets/d34039e2-e877-4993-b0bd-cc750b0aaf70" />
@@ -107,7 +107,7 @@ Python was used to connect to PostgreSQL and load the datasets into the database
 ## Step 4: SQL Analysis
 
 After loading the stock and earnings data into PostgreSQL, I performed SQL analysis to examine Apple's stock-price behavior around earnings announcements.
-Link to the script:[FMP query.sql](FMP-query.sql)
+Link to the script: (https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP%20query.sql)
 
 The SQL analysis includes the following steps.
 
@@ -139,7 +139,7 @@ First, I viewed the available data in both tables:
 After completing the SQL analysis, I developed an interactive dashboard using Power BI.
 
 The dashboard presents the relationship between Apple's earnings performance and stock-price movement.
-Link to the script:[FMP_dashboard_1.pbix](FMP_dashboard_1.pbix)
+Link to the script: https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP_dashboard%20_1.pbix
 
 <img width="1358" height="656" alt="Screenshot 2026-08-30 125016" src="https://github.com/user-attachments/assets/3cef372d-850f-4441-be83-2959233e2426" />
 <img width="1346" height="501" alt="Screenshot 2026-08-30 125042" src="https://github.com/user-attachments/assets/a09dede3-b832-422c-aa23-5829ea971a63" />
