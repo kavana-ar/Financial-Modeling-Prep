@@ -13,8 +13,6 @@ The project follows an end-to-end data analysis process:
 * Used SQL to analyze stock prices before, during, and after earnings announcements.
 * Created an interactive Power BI dashboard to present the findings.
 
----
-
 ## Table of Contents
 
 - [Data Source](#data-Source)
@@ -26,9 +24,8 @@ The project follows an end-to-end data analysis process:
 - [Step 4: SQL Analysis](#step-4-sql-analysis)
 - [Step 5: Power BI Dashboard](#step-5-power-bi-dashboard)
 
----
 
-# Data Source
+## Data Source
 
 This project uses historical stock market and earnings data for Apple (`AAPL`) obtained from the Financial Modeling Prep API.
 
@@ -40,9 +37,8 @@ The project contains two datasets:
 
 ### 2. [Apple Earnings Data](Apple-Earnings-Data)
 
----
 
-# Technologies
+## Technologies
 
 The following technologies were used to build this project:
 
@@ -53,12 +49,12 @@ The following technologies were used to build this project:
 * **Database Connection:** SQLAlchemy, Psycopg2
 * **Data Visualization:** Power BI
 
----
 
-# Data Pipeline Architecture
+## Data Pipeline Architecture
 
 The project follows the workflow below:
-<img width="1665" height="944" alt="ChatGPT Image Aug 30, 2026, 02_00_29 PM" src="https://github.com/user-attachments/assets/1712aadc-ca02-4025-85bd-28a52c2b4d53" />
+
+<img width="1665" height="836" alt="ChatGPT Image Aug 30, 2026, 02_00_29 PM" src="https://github.com/user-attachments/assets/3ae45b51-f7d3-47a2-98cf-616cee28b539" />
 
 Files in the following stages:
 
@@ -68,24 +64,25 @@ Files in the following stages:
 * Step 4: [SQL Analysis](SQL-Analysis)
 * Step 5: [Dashboard](Dashboard)
 
----
 
-# Step 1: Data Extraction
+## Step 1: Data Extraction
 
 In this step, I used Jupyter Notebook to extract data for Apple (`AAPL`) from the Financial Modeling Prep API.
 
 The API responses were converted into Pandas DataFrames and saved as CSV files for further analysis.
+
 Link to the script: [apple_stock_data.csv](apple_stock_data.csv) and [apple_earnings_data.csv](apple_earnings_data.csv)
+
 <img width="1313" height="638" alt="Screenshot 2026-08-30 121859" src="https://github.com/user-attachments/assets/04bf4f2b-9d28-41db-be86-9f47a019fa45" />
 <img width="1261" height="533" alt="Screenshot 2026-08-30 121933" src="https://github.com/user-attachments/assets/f90a2d94-c50e-4d64-b8b3-49eda6f5276c" />
 
----
 
-# Step 2: Data Validation and Preparation
+## Step 2: Data Validation and Preparation
 
 After extracting the data, I performed data validation and quality checks using Python and Pandas before loading the data into PostgreSQL.  
 
 Link to the script:[FMP_python-checkpoints.ipynb](FMP_python-checkpoints.ipynb)
+
 ## Stock Data Validation
 <img width="1243" height="536" alt="Screenshot 2026-08-30 132818" src="https://github.com/user-attachments/assets/d34039e2-e877-4993-b0bd-cc750b0aaf70" />
 <img width="1228" height="536" alt="Screenshot 2026-08-30 133114" src="https://github.com/user-attachments/assets/dec9de85-9075-4ec5-b56e-c111ccf5d9d3" />
@@ -95,10 +92,9 @@ Link to the script:[FMP_python-checkpoints.ipynb](FMP_python-checkpoints.ipynb)
 <img width="1232" height="490" alt="Screenshot 2026-08-30 133214" src="https://github.com/user-attachments/assets/3bad1206-2f7a-4f16-8d35-d2ad23be7760" />
 
 After completing the validation process, the datasets were prepared for storage and analysis.
-  
----
 
-# Step 3: Data Storage
+
+## Step 3: Data Storage
 
 After completing the data validation process, I loaded the datasets into a PostgreSQL database.
 
@@ -107,9 +103,8 @@ After completing the data validation process, I loaded the datasets into a Postg
 
 Python was used to connect to PostgreSQL and load the datasets into the database for SQL analysis.
 
----
 
-# Step 4: SQL Analysis
+## Step 4: SQL Analysis
 
 After loading the stock and earnings data into PostgreSQL, I performed SQL analysis to examine Apple's stock-price behavior around earnings announcements.
 Link to the script:[FMP query.sql](FMP-query.sql)
@@ -119,31 +114,27 @@ The SQL analysis includes the following steps.
 ## 1. Data Exploration
 
 First, I viewed the available data in both tables:
+
 <img width="1307" height="615" alt="Screenshot 2026-08-30 122932" src="https://github.com/user-attachments/assets/331bfecf-1772-4a3d-95a2-d5b5ac1122a8" />
 
----
 
 ## 2. Latest Four Completed Earnings Reports
 <img width="1055" height="533" alt="Screenshot 2026-08-30 123903" src="https://github.com/user-attachments/assets/0153c5ca-a784-4cb0-831f-64de4677c39b" />
 
----
 
 ## 3. Stock Price on Each Earnings Date
 <img width="1062" height="531" alt="Screenshot 2026-08-30 123934" src="https://github.com/user-attachments/assets/82cd0193-f05f-4523-a668-e5e3f01a700c" />
 
----
 
 ## 4. Stock Price Three Trading Days Before Earnings
 <img width="1053" height="535" alt="Screenshot 2026-08-30 124028" src="https://github.com/user-attachments/assets/231d5b63-8c8c-4ca0-addc-e7e4f12b6ec1" />
 
----
 
 ## 5. Earnings-Day Closing Price
 <img width="1066" height="548" alt="Screenshot 2026-08-30 124108" src="https://github.com/user-attachments/assets/ebc7fdb1-291f-4173-b06f-d4d0db6742cb" />
 
----
 
-# Step 5: Power BI Dashboard
+## Step 5: Power BI Dashboard
 
 After completing the SQL analysis, I developed an interactive dashboard using Power BI.
 
