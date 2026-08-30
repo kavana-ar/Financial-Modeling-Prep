@@ -81,13 +81,15 @@ Link to the script: [apple_stock_data.csv](apple_stock_data.csv) and [apple_earn
 
 After extracting the data, I performed data validation and quality checks using Python and Pandas before loading the data into PostgreSQL.  
 
-Link to the script: (https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP_python-checkpoint.ipynb)
+Link to the script: [python-checkpoint.ipynb](https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP_python-checkpoint.ipynb)
 
-## Stock Data Validation
+### Stock Data Validation
+
 <img width="1243" height="536" alt="Screenshot 2026-08-30 132818" src="https://github.com/user-attachments/assets/d34039e2-e877-4993-b0bd-cc750b0aaf70" />
 <img width="1228" height="536" alt="Screenshot 2026-08-30 133114" src="https://github.com/user-attachments/assets/dec9de85-9075-4ec5-b56e-c111ccf5d9d3" />
 
-## Earnings Data Validation
+### Earnings Data Validation
+
 <img width="1236" height="534" alt="Screenshot 2026-08-30 132845" src="https://github.com/user-attachments/assets/7c216d05-f4f4-4911-a819-4e4b4a2e497f" />
 <img width="1232" height="490" alt="Screenshot 2026-08-30 133214" src="https://github.com/user-attachments/assets/3bad1206-2f7a-4f16-8d35-d2ad23be7760" />
 
@@ -107,7 +109,8 @@ Python was used to connect to PostgreSQL and load the datasets into the database
 ## Step 4: SQL Analysis
 
 After loading the stock and earnings data into PostgreSQL, I performed SQL analysis to examine Apple's stock-price behavior around earnings announcements.
-Link to the script: (https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP%20query.sql)
+
+Link to the script: [query.sql](https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP%20query.sql)
 
 The SQL analysis includes the following steps.
 
@@ -136,10 +139,7 @@ First, I viewed the available data in both tables:
 
 ## Step 5: Power BI Dashboard
 
-After completing the SQL analysis, I developed an interactive dashboard using Power BI.
-
-The dashboard presents the relationship between Apple's earnings performance and stock-price movement.
-Link to the script: https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP_dashboard%20_1.pbix
+After completing the SQL analysis, I developed an interactive dashboard using Power BI. which you can view [here](https://github.com/kavana-ar/Financial-Modeling-Prep/blob/main/FMP_dashboard%20_1.pbix)
 
 <img width="1358" height="656" alt="Screenshot 2026-08-30 125016" src="https://github.com/user-attachments/assets/3cef372d-850f-4441-be83-2959233e2426" />
 <img width="1346" height="501" alt="Screenshot 2026-08-30 125042" src="https://github.com/user-attachments/assets/a09dede3-b832-422c-aa23-5829ea971a63" />
